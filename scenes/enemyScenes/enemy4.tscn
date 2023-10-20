@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccvhbcdh4jwsg"]
+
+[ext_resource type="Texture2D" uid="uid://bftm3a1h1mq7v" path="res://sprites/enemies/enemy4.png" id="1_juesr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_juesr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(-4, 8, 4, 8, 4, 6, 6, 6, 6, 3, 8, 2, 8, -4, 6, -4, 6, -6, 2, -6, 2, -8, -2, -8, -2, -6, -6, -7, -6, -4, -8, -4, -8, 2, -6, 2, -6, 6, -4, 6)

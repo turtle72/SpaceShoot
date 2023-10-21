@@ -15,10 +15,6 @@ run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-HighScore="*res://scripts/high_score.gd"
-
 [display]
 
 window/size/viewport_width=256

@@ -5,6 +5,11 @@ const SPEED = 125.0
 var score = 0
 var highScore = 0
 
+func _ready():
+	var enemyScene = load("res://scenes/enemyScenes/enemy1.tscn")
+	var enemyInstance = enemyScene.instantiate()
+	get_parent().get_node("enemies").add_child(enemyInstance)
+	print(get_parent().get_node("enemies").get_children())
 
 func get_input():
 	var input_dir = Input.get_vector("left","right","empty","empty")

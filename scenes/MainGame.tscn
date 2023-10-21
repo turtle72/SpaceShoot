@@ -27,6 +27,6 @@ polygon = PackedVector2Array(-11, 108, 11, 108, 11, 100, 9, 100, 9, 98, 3, 98, 3
 
 [node name="Bullets" type="Node" parent="player"]
 
-[node name="enemies" type="Node" parent="."]
+[node name="enemies" type="Node" parent="." groups=["enemies"]]
 
 [connection signal="input_event" from="player" to="player" method="_on_input_event"]

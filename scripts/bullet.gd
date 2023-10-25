@@ -1,23 +1,23 @@
 extends CharacterBody2D
 
-var VELOCITY = Vector2(0, -150)
+var VELOCITY = Vector2(0, -150) #x,y and up is down and down is up
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("bullet shot")
+	pass
+#	print("bullet shot")
 
-#(instance_from_id(collision_info.get_instance_id()))
 
 func _physics_process(delta):
 	var collide = move_and_collide(VELOCITY * delta)
 	
+	
 	if collide:
-		collide.get_collider()
-		for item in get_tree().get_nodes_in_group("enemies"):
-			print(item.get_children())
-			print(collide.get_collider())
-			if item.get_child(0) == collide.get_collider():
-				item.queue_free()
 		
-		queue_free()
+		for item in get_tree().root.get_node("Node2D/player/enemies").get_children():
+			if collide.get_collider() == item:
+				collide.get_collider().health = collide.get_collider().health - 1
+		
+		print(get_tree().get_nodes_in_group("enemies")[0].get_children())
+		queue_free() # remove bullet
 

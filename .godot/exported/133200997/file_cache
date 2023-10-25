@@ -1,0 +1,9 @@
+res://resources/fontGImport.tres::0cb7d208ccccc40480078f33e785b749::1697816199::res://.godot/exported/133200997/export-6ff92f938b12de82e7d180b224f6743b-fontGImport.res
+res://scenes/enemyScenes/enemy1.tscn::ee65621165847b6b7e2d8757a4f2f053::1698009893::res://.godot/exported/133200997/export-aaa976335399b6ac0c21678ec7ad1c63-enemy1.scn
+res://scenes/enemyScenes/enemy2.tscn::cacc34a8745a8799435533510a662cc4::1698009893::res://.godot/exported/133200997/export-3e09611cdf4ccfc3aa9a8431507ca48d-enemy2.scn
+res://scenes/enemyScenes/enemy3.tscn::ba879999945183883cde334366fff267::1698009893::res://.godot/exported/133200997/export-399c395213158832a43c43e0f5b1ed2f-enemy3.scn
+res://scenes/enemyScenes/enemy4.tscn::63d0714bb596b8a5aadae338f67bcd5a::1698009893::res://.godot/exported/133200997/export-6844f8cde82c1e95e38e686e18d49592-enemy4.scn
+res://scenes/enemyScenes/enemy5.tscn::c19ede07e3bae19fc2865bc696416490::1698009893::res://.godot/exported/133200997/export-551b7cedd282cc85d8f97553555cd6a7-enemy5.scn
+res://scenes/bullet.tscn::643f63fec43d5d12fa122aa51510a4da::1698009893::res://.godot/exported/133200997/export-6d8e6ff1e6f20a36e0402d27c623c86c-bullet.scn
+res://scenes/MainGame.tscn::c9ad9440b5830931b7e31a84e9bc182e::1698009893::res://.godot/exported/133200997/export-dbfc6818b022d976e0e33ac4dabecd4c-MainGame.scn
+res://scenes/MainMenu.tscn::7cdd0b9cf60f65250fcaabb34f92018a::1698009892::res://.godot/exported/133200997/export-23c8b2a48d59a0cd018bd8ad5ce7794c-MainMenu.scn

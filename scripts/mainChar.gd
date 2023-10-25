@@ -1,15 +1,31 @@
 extends CharacterBody2D
+#get_viewport_rect().size
+
 
 
 const SPEED = 125.0
+var rng = RandomNumberGenerator.new()
 var score = 0
-var highScore = 0
+var enemyList = {}
 
 func _ready():
-	var enemyScene = load("res://scenes/enemyScenes/enemy1.tscn")
-	var enemyInstance = enemyScene.instantiate()
-	get_parent().get_node("enemies").add_child(enemyInstance)
-	print(get_parent().get_node("enemies").get_children())
+	spawnEnemy([1,1,2,1])
+	print(get_node("enemies").get_children())
+
+
+func spawnEnemy(enemy):
+	var nodeId = 0
+	for item in enemy: #spawn enemies
+		nodeId += 1
+		print(nodeId)
+		enemyList["enemy"+str(nodeId)] = {}
+		enemyList["enemy"+str(nodeId)]["enemyScene"] = load("res://scenes/enemyScenes/enemy" + str(item) + ".tscn")
+		enemyList["enemy"+str(nodeId)]["enemyInstance"] = enemyList["enemy"+str(item)]["enemyScene"].instantiate()
+		get_node("enemies").add_child(enemyList["enemy"+str(item)]["enemyInstance"])
+		enemyList["enemy"+str(nodeId)]["enemyInstance"].position = Vector2(randi_range(-120,120),randi_range(-110,-10))
+		enemyList["enemy"+str(nodeId)]["pos"] = enemyList["enemy"+str(item)]["enemyInstance"].position
+		
+	
 
 func get_input():
 	var input_dir = Input.get_vector("left","right","empty","empty")
@@ -19,15 +35,19 @@ func get_input():
 	if position.x + input_dir.x >= 115:
 		velocity = Vector2(-100,0)
 
-func _process(_delta):
-	pass
-	
+
 func _physics_process(delta):
 	get_input() 
 	move_and_collide(velocity * delta)
 
+func _process(delta):
+	pass
+	
+
 func _input(event):
 	if event.is_action_pressed("shoot"):
+		$shootAudio.play()
+
 		var scene = preload("res://scenes/bullet.tscn")
 		var instance = scene.instantiate()
 		get_node("Bullets").add_child(instance)

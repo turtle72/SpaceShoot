@@ -1,11 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr7f6wyytpi0e"]
+[gd_scene load_steps=9 format=3 uid="uid://dr7f6wyytpi0e"]
 
 [ext_resource type="Texture2D" uid="uid://c8t211ph7sh71" path="res://sprites/misc/gbg.png" id="1_a4fda"]
 [ext_resource type="Script" path="res://scripts/mainChar.gd" id="2_iisrh"]
 [ext_resource type="Texture2D" uid="uid://tdl2s0jpbwea" path="res://sprites/player/player.png" id="2_q2otw"]
+[ext_resource type="AudioStream" uid="uid://bqj6xn1f1ep4q" path="res://resources/invaderkilled.wav" id="3_um6ly"]
+[ext_resource type="AudioStream" uid="uid://b3io2vkbtc82l" path="res://resources/shoot.wav" id="4_00ibc"]
+[ext_resource type="FontFile" uid="uid://ckoqide7nk5jc" path="res://resources/VT323-Regular.ttf" id="6_bqwmp"]
+[ext_resource type="Script" path="res://scripts/newRoundText.gd" id="7_p433a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ve4df"]
+font = ExtResource("6_bqwmp")
+font_size = 23
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(0, 1)
+position = Vector2(-1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
@@ -27,6 +35,22 @@ polygon = PackedVector2Array(-11, 108, 11, 108, 11, 100, 9, 100, 9, 98, 3, 98, 3
 
 [node name="Bullets" type="Node" parent="player"]
 
-[node name="enemies" type="Node" parent="." groups=["enemies"]]
+[node name="shootAudio" type="AudioStreamPlayer" parent="player" groups=["audio"]]
+stream = ExtResource("4_00ibc")
+
+[node name="killInvadeAudio" type="AudioStreamPlayer" parent="player" groups=["audio"]]
+stream = ExtResource("3_um6ly")
+volume_db = 0.963
+
+[node name="enemies" type="Node" parent="player" groups=["enemies"]]
+
+[node name="newRoundText" type="Label" parent="."]
+offset_left = -111.0
+offset_top = -82.0
+offset_right = 114.0
+offset_bottom = -55.0
+text = "Shoot To Start Next Round"
+label_settings = SubResource("LabelSettings_ve4df")
+script = ExtResource("7_p433a")
 
 [connection signal="input_event" from="player" to="player" method="_on_input_event"]

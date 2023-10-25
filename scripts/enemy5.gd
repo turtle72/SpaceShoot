@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var health = 3
+var speed = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,5 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if health == 0:
+		get_tree().get_nodes_in_group("audio")[1].play()
+		queue_free()
 

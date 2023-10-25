@@ -1,7 +1,7 @@
 res://scenes/MainMenu.tscn
 res://scenes/menuButton.gd
-res://scripts/gameText.gd
-res://scenes/menuHighScore.gd
+res://scripts/enemy1.gd
+res://scripts/mainChar.gd
 res://scenes/MainGame.tscn
 res://scenes/bullet.tscn
 res://scenes/enemyScenes/enemy1.tscn
@@ -10,9 +10,4 @@ res://scenes/enemyScenes/enemy3.tscn
 res://scenes/enemyScenes/enemy4.tscn
 res://scenes/enemyScenes/enemy5.tscn
 res://scripts/bullet.gd
-res://scripts/mainChar.gd
-res://scripts/enemy1.gd
-res://scripts/enemy2.gd
-res://scripts/enemy3.gd
-res://scripts/enemy4.gd
-res://scripts/enemy5.gd
+res://scripts/newRoundText.gd
